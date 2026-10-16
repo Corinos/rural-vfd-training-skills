@@ -1,0 +1,632 @@
+/* ==========================================================================
+   Rural Volunteer Fire Department – Training Skill Sheet Stylesheet
+   Designed for Screen Display & Double-Sided Letter (8.5" x 11") Printing
+   ========================================================================== */
+
+:root {
+  --primary-navy: #0f172a;
+  --secondary-navy: #1e293b;
+  --fire-red: #b91c1c;
+  --fire-red-light: #fef2f2;
+  --fire-red-border: #f87171;
+  --gold: #b45309;
+  --gold-light: #fffbeb;
+  --gold-border: #fcd34d;
+  --safety-yellow: #fef9c3;
+  --safety-yellow-border: #facc15;
+  --slate-dark: #334155;
+  --slate-medium: #64748b;
+  --slate-light: #f1f5f9;
+  --slate-border: #cbd5e1;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --card-bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-main);
+  background-color: #e2e8f0;
+  line-height: 1.35;
+  font-size: 11pt;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Screen Toolbar & Navigation
+   ========================================================================== */
+.screen-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--primary-navy);
+  color: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.screen-toolbar a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.screen-toolbar a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn-print {
+  background-color: var(--fire-red);
+  color: #ffffff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.btn-print:hover {
+  background-color: #dc2626;
+}
+
+/* ==========================================================================
+   Print Sheet Container (Double-Sided Letter)
+   ========================================================================== */
+.sheet-container {
+  max-width: 8.5in;
+  margin: 20px auto 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.page {
+  background: var(--card-bg);
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.4in;
+  margin: 0 auto;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Page Side Indicator Ribbon (Screen Only) */
+.page-tag {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate-medium);
+  background: var(--slate-light);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--slate-border);
+}
+
+/* ==========================================================================
+   Header Section (Front)
+   ========================================================================== */
+.header-front {
+  border-bottom: 2px solid var(--fire-red);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.header-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.drill-id-badge {
+  background-color: var(--fire-red);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.drill-category {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--slate-medium);
+  margin-top: 2px;
+}
+
+.drill-title {
+  font-size: 20pt;
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--primary-navy);
+  margin: 4px 0 6px 0;
+  text-transform: uppercase;
+}
+
+.meta-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.badge {
+  font-size: 8.5pt;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-navy {
+  background-color: var(--primary-navy);
+  color: #ffffff;
+}
+
+.badge-slate {
+  background-color: var(--slate-light);
+  color: var(--slate-dark);
+  border: 1px solid var(--slate-border);
+}
+
+.badge-red {
+  background-color: var(--fire-red-light);
+  color: var(--fire-red);
+  border: 1px solid var(--fire-red-border);
+}
+
+/* ==========================================================================
+   Header Section (Back)
+   ========================================================================== */
+.header-back {
+  background-color: var(--primary-navy);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-back h2 {
+  font-size: 12pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.header-back span {
+  font-size: 9pt;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Objective & Callout Banners
+   ========================================================================== */
+.objective-box {
+  background-color: var(--gold-light);
+  border-left: 4px solid var(--gold);
+  border-top: 1px solid var(--gold-border);
+  border-right: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+  padding: 8px 12px;
+  border-radius: 0 4px 4px 0;
+  margin-bottom: 10px;
+}
+
+.objective-box h3 {
+  font-size: 9.5pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.objective-box p {
+  font-size: 10pt;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   Two-Column Grid (Equipment & Safety)
+   ========================================================================== */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid var(--slate-border);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.card-title {
+  font-size: 9pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--slate-border);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-equipment {
+  background-color: var(--slate-light);
+}
+
+.card-equipment .card-title {
+  color: var(--slate-dark);
+}
+
+.card-safety {
+  background-color: var(--safety-yellow);
+  border-color: var(--safety-yellow-border);
+}
+
+.card-safety .card-title {
+  color: var(--fire-red);
+  border-bottom-color: var(--safety-yellow-border);
+}
+
+.checklist {
+  list-style: none;
+  font-size: 9pt;
+  line-height: 1.35;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 3px;
+}
+
+.checklist li::before {
+  content: "•";
+  position: absolute;
+  left: 3px;
+  color: var(--slate-medium);
+  font-weight: bold;
+}
+
+.card-safety .checklist li::before {
+  content: "⚠️";
+  font-size: 8pt;
+  left: 0;
+}
+
+.stop-rule-callout {
+  background-color: #fee2e2;
+  border: 1px solid var(--fire-red-border);
+  color: #7f1d1d;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 8.5pt;
+  font-weight: 700;
+  margin-top: 5px;
+  line-height: 1.25;
+}
+
+/* ==========================================================================
+   Phases & Steps
+   ========================================================================== */
+.phase-card {
+  border: 1px solid var(--slate-border);
+  border-radius: 6px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.phase-header {
+  background-color: var(--secondary-navy);
+  color: #ffffff;
+  padding: 5px 10px;
+  font-size: 9.5pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.phase-body {
+  padding: 8px 10px;
+  font-size: 9.5pt;
+  line-height: 1.35;
+}
+
+.step-list {
+  list-style: none;
+  counter-reset: step-counter;
+}
+
+.step-list > li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 6px;
+}
+
+.step-list > li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 1px;
+  background-color: var(--fire-red);
+  color: #ffffff;
+  font-size: 8pt;
+  font-weight: 800;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.step-title {
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+.sub-steps {
+  list-style: disc;
+  margin-left: 15px;
+  margin-top: 2px;
+  font-size: 9pt;
+  color: var(--slate-dark);
+}
+
+.sub-steps li {
+  margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   Page 2 Specific Cards
+   ========================================================================== */
+.pitfalls-card {
+  background-color: var(--fire-red-light);
+  border: 1px solid var(--fire-red-border);
+  border-radius: 6px;
+  padding: 7px 10px;
+  margin-bottom: 8px;
+}
+
+.pitfalls-card .card-title {
+  color: var(--fire-red);
+  border-bottom: 1px solid var(--fire-red-border);
+}
+
+.pitfalls-card ul {
+  list-style: none;
+  font-size: 9pt;
+}
+
+.pitfalls-card li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 3px;
+  line-height: 1.25;
+}
+
+.pitfalls-card li::before {
+  content: "❌";
+  font-size: 7.5pt;
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+
+.debrief-card {
+  background-color: var(--gold-light);
+  border: 1px solid var(--gold-border);
+  border-radius: 6px;
+  padding: 7px 10px;
+  margin-bottom: 8px;
+}
+
+.debrief-card .card-title {
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.debrief-card ol {
+  margin-left: 18px;
+  font-size: 9pt;
+  line-height: 1.3;
+}
+
+.debrief-card li {
+  margin-bottom: 3px;
+  font-weight: 600;
+  color: var(--primary-navy);
+}
+
+.reset-card {
+  background-color: var(--slate-light);
+  border: 1px solid var(--slate-border);
+  border-radius: 6px;
+  padding: 7px 10px;
+  margin-bottom: 8px;
+}
+
+.reset-card .card-title {
+  color: var(--primary-navy);
+}
+
+.checkbox-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 10px;
+  list-style: none;
+  font-size: 8.5pt;
+}
+
+.checkbox-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.square-box {
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid var(--slate-medium);
+  border-radius: 2px;
+  display: inline-block;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+/* Sign-Off Block */
+.signoff-card {
+  border: 1px solid var(--slate-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  background-color: #fafafa;
+  margin-top: 4px;
+}
+
+.signoff-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+  gap: 8px;
+  font-size: 8.5pt;
+}
+
+.signoff-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.signoff-label {
+  font-size: 7.5pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--slate-medium);
+  margin-bottom: 2px;
+}
+
+.signoff-line {
+  border-bottom: 1px solid var(--slate-dark);
+  height: 16px;
+}
+
+/* Page Footer Navigation */
+.page-footer {
+  border-top: 1px solid var(--slate-border);
+  padding-top: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8pt;
+  color: var(--slate-medium);
+  margin-top: auto;
+}
+
+.turn-over-notice {
+  font-weight: 800;
+  color: var(--fire-red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 8.5pt;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================================================
+   Print Rules (@media print)
+   ========================================================================== */
+@media print {
+  body {
+    background: transparent !important;
+    font-size: 10pt;
+    color: #000000;
+  }
+
+  .screen-toolbar, .page-tag {
+    display: none !important;
+  }
+
+  .sheet-container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    gap: 0 !important;
+  }
+
+  .page {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .page-back {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rural VFD Weekly Skills Training Manual - Station Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .portal-container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .portal-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 35px 30px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      border-left: 8px solid var(--fire-red);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    .portal-hero h1 {
+      font-size: 26pt;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .portal-hero p {
+      font-size: 12pt;
+      color: #cbd5e1;
+      max-width: 800px;
+      line-height: 1.5;
+    }
+    .portal-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .hero-btn {
+      background: var(--fire-red);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 10.5pt;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s ease;
+    }
+    .hero-btn:hover {
+      background: #dc2626;
+    }
+    .hero-btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .hero-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--slate-border);
+      padding-bottom: 10px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--slate-medium);
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .tab-btn.active {
+      background: var(--primary-navy);
+      color: #ffffff;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 15px;
+    }
+    .skill-card {
+      background: #ffffff;
+      border: 1px solid var(--slate-border);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      border-color: var(--slate-dark);
+    }
+    .card-top {
+      margin-bottom: 12px;
+    }
+    .badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .card-title-link {
+      font-size: 12.5pt;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      line-height: 1.25;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .card-title-link:hover {
+      color: var(--fire-red);
+    }
+    .card-category-label {
+      font-size: 9pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--slate-medium);
+    }
+    .card-action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--slate-light);
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+    .action-link {
+      font-size: 9pt;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--fire-red);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .action-link:hover {
+      text-decoration: underline;
+    }
+    .pdf-link {
+      color: var(--slate-dark);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="portal-container">
+    <div class="portal-hero">
+      <span class="badge badge-red" style="font-size: 10pt; margin-bottom: 8px;">Station 2 • New Brunswick</span>
+      <h1>Weekly Skills Training Manual</h1>
+      <p>Turnkey, double-sided 1-page skills drills aligned with NFPA 1001 Level 1 & Level 2 and WorkSafeNB General Regulation 91-191. Ready to run by any senior firefighter when officers are unavailable.</p>
+      
+      <div class="portal-meta-bar">
+        <a href="../pdf/Rural_VFD_Weekly_Skills_Manual_Complete.pdf" class="hero-btn" target="_blank">📥 Download Complete Binder PDF (56 Pages)</a>
+        <a href="full-binder.html" class="hero-btn hero-btn-secondary" target="_blank">🖨️ View Print-All HTML Binder</a>
+        <a href="../HOW_TO_USE.md" class="hero-btn hero-btn-secondary">📖 Officer-less Playbook</a>
+        <a href="../ANNUAL_TRAINING_SCHEDULE.md" class="hero-btn hero-btn-secondary">📅 52-Week Schedule</a>
+      </div>
+    </div>
+
+    <div class="filter-tabs">
+      <button class="tab-btn active" onclick="filterDrills('all', this)">All Drills (28)</button>
+      <button class="tab-btn" onclick="filterDrills('Level 1', this)">Level 1 (NFPA 1001 FF I)</button>
+      <button class="tab-btn" onclick="filterDrills('Level 2', this)">Level 2 (NFPA 1001 FF II)</button>
+    </div>
+
+    <div class="skills-grid" id="drillsGrid">
+      
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 01</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">PPE &amp; SCBA</div>
+          <a href="skills/level-1/01_SCBA_Donning_and_Checks.html" class="card-title-link">SCBA Donning, Seal Check &amp; Emergency Bypass</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Any Engine/Pumper
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/01_SCBA_Donning_and_Checks.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/01_SCBA_Donning_and_Checks.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 02</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">PPE &amp; SCBA</div>
+          <a href="skills/level-1/02_SCBA_Emergency_Procedures.html" class="card-title-link">SCBA Emergency Procedures &amp; Air Management</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Any Engine/Rescue
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/02_SCBA_Emergency_Procedures.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/02_SCBA_Emergency_Procedures.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 03</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">PPE &amp; SCBA</div>
+          <a href="skills/level-1/03_SCBA_Cylinder_Replacement.html" class="card-title-link">SCBA Cylinder Replacement (Solo, Buddy &amp; Cascade)</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Any Engine/Rescue
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/03_SCBA_Cylinder_Replacement.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/03_SCBA_Cylinder_Replacement.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 04</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Ground Ladders</div>
+          <a href="skills/level-1/04_Ground_Ladders_Carries_and_Raises.html" class="card-title-link">Ground Ladders – Carries, Raises &amp; Placement</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Pumper / Ladder Rack
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/04_Ground_Ladders_Carries_and_Raises.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/04_Ground_Ladders_Carries_and_Raises.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 05</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Ground Ladders</div>
+          <a href="skills/level-1/05_Roof_Ladder_Deployment.html" class="card-title-link">Roof Ladder Deployment &amp; Leg Lock Work Position</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Pumper / Ladder Rack
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/05_Roof_Ladder_Deployment.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/05_Roof_Ladder_Deployment.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 06</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Hose &amp; Streams</div>
+          <a href="skills/level-1/06_Attack_Line_Deployment_and_Flaking.html" class="card-title-link">Attack Line Deployment &amp; Flaking (Crosslay / Minuteman)</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Pumper / Engine
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/06_Attack_Line_Deployment_and_Flaking.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/06_Attack_Line_Deployment_and_Flaking.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 07</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Hose &amp; Streams</div>
+          <a href="skills/level-1/07_Hose_Handling_and_Advancement.html" class="card-title-link">Hose Handling, Body Mechanics &amp; Advancement</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Pumper / Engine
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/07_Hose_Handling_and_Advancement.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/07_Hose_Handling_and_Advancement.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 08</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Hose &amp; Streams</div>
+          <a href="skills/level-1/08_Extending_Working_Hoseline.html" class="card-title-link">Extending a Working Hoseline (Break &amp; Extend)</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Pumper / Engine
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/08_Extending_Working_Hoseline.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/08_Extending_Working_Hoseline.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 09</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Water Supply</div>
+          <a href="skills/level-1/09_Supply_Line_and_Hydrant_LDH.html" class="card-title-link">Large Diameter Hose (LDH) &amp; Hydrant / Supply Lays</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Pumper / Engine
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/09_Supply_Line_and_Hydrant_LDH.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/09_Supply_Line_and_Hydrant_LDH.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 10</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Rural Water Supply</div>
+          <a href="skills/level-1/10_Rural_Drop_Tank_and_Dump_Operations.html" class="card-title-link">Rural Drop Tank Deployment &amp; Tanker Dump Operations</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 60–75 min • 🚒 Pumper &amp; Tanker (Mobile Water Supply)
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/10_Rural_Drop_Tank_and_Dump_Operations.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/10_Rural_Drop_Tank_and_Dump_Operations.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 11</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Rural Water Supply</div>
+          <a href="skills/level-1/11_Drafting_Static_Water_Source.html" class="card-title-link">Drafting from a Static Water Source &amp; Dry Hydrant</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 60–75 min • 🚒 Pumper / Engine
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/11_Drafting_Static_Water_Source.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/11_Drafting_Static_Water_Source.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 12</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Search &amp; Rescue</div>
+          <a href="skills/level-1/12_Primary_Search_Techniques.html" class="card-title-link">Primary Search Techniques &amp; Oriented Search</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Any Engine/Rescue
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/12_Primary_Search_Techniques.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/12_Primary_Search_Techniques.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 13</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Search &amp; Rescue</div>
+          <a href="skills/level-1/13_Victim_Drags_and_Removals.html" class="card-title-link">Victim Drags, Carries &amp; Window Removals</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Any Engine/Rescue
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/13_Victim_Drags_and_Removals.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/13_Victim_Drags_and_Removals.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 14</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Forcible Entry</div>
+          <a href="skills/level-1/14_Conventional_Forcible_Entry_Irons.html" class="card-title-link">Conventional Forcible Entry ("The Irons")</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Any Engine/Truck
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/14_Conventional_Forcible_Entry_Irons.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/14_Conventional_Forcible_Entry_Irons.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 15</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Ventilation</div>
+          <a href="skills/level-1/15_Positive_Pressure_Ventilation_PPV.html" class="card-title-link">Positive Pressure Ventilation (PPV) &amp; Hydraulic Vent</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Pumper / Rescue
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/15_Positive_Pressure_Ventilation_PPV.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/15_Positive_Pressure_Ventilation_PPV.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 16</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Ropes &amp; Rigging</div>
+          <a href="skills/level-1/16_Ropes_and_Tool_Hoisting.html" class="card-title-link">Fireground Knots &amp; Tool Hoisting</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Any Engine/Truck
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/16_Ropes_and_Tool_Hoisting.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/16_Ropes_and_Tool_Hoisting.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 17</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Salvage &amp; Overhaul</div>
+          <a href="skills/level-1/17_Salvage_and_Water_Chutes.html" class="card-title-link">Salvage, Water Chutes &amp; Overhaul with TIC</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Pumper / Rescue
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/17_Salvage_and_Water_Chutes.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/17_Salvage_and_Water_Chutes.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 1">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 18</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 1</span>
+          </div>
+          <div class="card-category-label">Rural Fireground Priority</div>
+          <a href="skills/level-1/18_Chimney_and_Woodstove_Fires.html" class="card-title-link">Chimney &amp; Wood Stove Fire Operations</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Pumper / Engine
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-1/18_Chimney_and_Woodstove_Fires.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-1/18_Chimney_and_Woodstove_Fires.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 2">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 19</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 2</span>
+          </div>
+          <div class="card-category-label">Incident Command &amp; Communication</div>
+          <a href="skills/level-2/19_First_Due_SizeUp_and_CAN_Report.html" class="card-title-link">First-Due Size-Up &amp; The CAN Radio Report</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Any Engine/Command
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-2/19_First_Due_SizeUp_and_CAN_Report.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-2/19_First_Due_SizeUp_and_CAN_Report.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 2">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 20</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 2</span>
+          </div>
+          <div class="card-category-label">Firefighter Survival</div>
+          <a href="skills/level-2/20_Mayday_Calling_and_Firefighter_Survival.html" class="card-title-link">Mayday Transmission &amp; Firefighter Self-Rescue</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Any Engine/Rescue
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-2/20_Mayday_Calling_and_Firefighter_Survival.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-2/20_Mayday_Calling_and_Firefighter_Survival.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 2">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 21</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 2</span>
+          </div>
+          <div class="card-category-label">Rapid Intervention (RIT)</div>
+          <a href="skills/level-2/21_Downed_Firefighter_Packaging_RIT.html" class="card-title-link">Downed Firefighter Packaging &amp; FAST / RIT Basics</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Rescue / Engine
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-2/21_Downed_Firefighter_Packaging_RIT.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-2/21_Downed_Firefighter_Packaging_RIT.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 2">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 22</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 2</span>
+          </div>
+          <div class="card-category-label">Vehicle Extrication</div>
+          <a href="skills/level-2/22_Vehicle_Stabilization_and_Glass.html" class="card-title-link">Vehicle Stabilization &amp; Glass Management</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Rescue / Engine
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-2/22_Vehicle_Stabilization_and_Glass.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-2/22_Vehicle_Stabilization_and_Glass.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 2">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 23</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 2</span>
+          </div>
+          <div class="card-category-label">Vehicle Extrication</div>
+          <a href="skills/level-2/23_Hydraulic_Extrication_Door_Pop.html" class="card-title-link">Hydraulic Rescue Tools – Door Pop &amp; Hinge Removal</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 60–75 min • 🚒 Rescue / Engine
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-2/23_Hydraulic_Extrication_Door_Pop.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-2/23_Hydraulic_Extrication_Door_Pop.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 2">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 24</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 2</span>
+          </div>
+          <div class="card-category-label">Vehicle Extrication / Hazmat</div>
+          <a href="skills/level-2/24_Vehicle_Battery_Isolation_12V_and_EV.html" class="card-title-link">Vehicle Battery Isolation – 12V Systems &amp; Electric Vehicles (EV)</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Rescue / Engine
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-2/24_Vehicle_Battery_Isolation_12V_and_EV.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-2/24_Vehicle_Battery_Isolation_12V_and_EV.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 2">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 25</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 2</span>
+          </div>
+          <div class="card-category-label">Advanced Fire Suppression</div>
+          <a href="skills/level-2/25_Foam_Eductor_and_Application.html" class="card-title-link">Foam Eductors &amp; Firefighting Foam Application</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Pumper / Engine
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-2/25_Foam_Eductor_and_Application.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-2/25_Foam_Eductor_and_Application.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 2">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 26</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 2</span>
+          </div>
+          <div class="card-category-label">Advanced Fire Suppression</div>
+          <a href="skills/level-2/26_Propane_Tank_Cooling_and_Shutoff.html" class="card-title-link">Flammable Gas / Propane Tank Cooling &amp; Valve Shutoff</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Pumper / Engine
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-2/26_Propane_Tank_Cooling_and_Shutoff.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-2/26_Propane_Tank_Cooling_and_Shutoff.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 2">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 27</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 2</span>
+          </div>
+          <div class="card-category-label">Advanced Tactics</div>
+          <a href="skills/level-2/27_Coordinated_Ventilation_and_Flow_Path.html" class="card-title-link">Coordinated Fireground Ventilation &amp; Flow Path Control</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 45–60 min • 🚒 Pumper / Engine
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-2/27_Coordinated_Ventilation_and_Flow_Path.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-2/27_Coordinated_Ventilation_and_Flow_Path.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-level="Level 2">
+        <div class="card-top">
+          <div class="badge-row">
+            <span class="drill-id-badge" style="font-size: 11px; padding: 2px 6px;">DRILL 28</span>
+            <span class="badge badge-navy" style="font-size: 8pt;">Level 2</span>
+          </div>
+          <div class="card-category-label">Apparatus &amp; Equipment Maintenance</div>
+          <a href="skills/level-2/28_Service_Hose_Testing_and_Inspection.html" class="card-title-link">Annual Service Hose Testing &amp; Inspection</a>
+          <div style="font-size: 8.5pt; color: var(--slate-dark); margin-top: 4px;">
+            ⏱️ 60–75 min • 🚒 Pumper / Hose Testing Rig
+          </div>
+        </div>
+        <div class="card-action-bar">
+          <a href="skills/level-2/28_Service_Hose_Testing_and_Inspection.html" class="action-link">🖥️ Interactive Sheet</a>
+          <a href="../pdf/skills/level-2/28_Service_Hose_Testing_and_Inspection.pdf" class="action-link pdf-link" target="_blank">📄 Download PDF</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterDrills(level, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cards = document.querySelectorAll('.skill-card');
+      cards.forEach(card => {
+        if (level === 'all' || card.getAttribute('data-level') === level) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weekly Training Attendance Roster - Rural VFD</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .roster-page {
+      max-width: 8.5in;
+      min-height: 11in;
+      background: #ffffff;
+      margin: 20px auto;
+      padding: 0.4in;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .roster-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 9pt;
+    }
+    .roster-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 6px 8px;
+      text-align: left;
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      border: 1px solid var(--slate-border);
+    }
+    .roster-table td {
+      padding: 7px 8px;
+      border: 1px solid var(--slate-border);
+    }
+    .roster-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 9.5pt;
+    }
+    .form-field {
+      border-bottom: 1px solid var(--slate-dark);
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+    }
+    .form-field strong {
+      color: var(--primary-navy);
+    }
+  </style>
+</head>
+<body>
+  <div class="screen-toolbar">
+    <a href="index.html">⬅️ Back to Skills Portal</a>
+    <button class="btn-print" onclick="window.print()">🖨️ Print Attendance Roster (PDF)</button>
+  </div>
+
+  <div class="roster-page">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--fire-red); padding-bottom: 6px; margin-bottom: 10px;">
+        <div>
+          <h1 style="font-size: 18pt; text-transform: uppercase; color: var(--primary-navy);">Weekly Training Attendance & JPR Sign-Off</h1>
+          <div style="font-size: 9.5pt; font-weight: 700; color: var(--slate-medium);">Station 2 • Office of the Fire Marshal (NB) & Insurance Training Log</div>
+        </div>
+        <span class="badge badge-navy" style="font-size: 9pt; padding: 4px 8px;">FCPNB / FUS RECORD</span>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-field"><strong>Drill Name:</strong> __________________________________________________</div>
+        <div class="form-field"><strong>Date:</strong> ____________________</div>
+        <div class="form-field"><strong>Hours:</strong> ________ hrs</div>
+      </div>
+
+      <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div class="form-field"><strong>Standard:</strong> NFPA 1001 L1 [  ] / L2 [  ]</div>
+        <div class="form-field"><strong>Drill Leader:</strong> ______________________</div>
+        <div class="form-field"><strong>Safety Officer:</strong> ____________________</div>
+      </div>
+
+      <div style="background: var(--slate-light); border: 1px solid var(--slate-border); border-radius: 4px; padding: 6px 10px; margin-bottom: 10px; font-size: 8.5pt;">
+        <strong>Safety Verification:</strong>
+        [  ] Pre-drill brief conducted & STOP command verified |
+        [  ] WorkSafeNB Reg 91-191 PPE verified (No jewellery) |
+        [  ] Truck reset completed
+      </div>
+
+      <table class="roster-table">
+        <thead>
+          <tr>
+            <th style="width: 30px;">#</th>
+            <th>Firefighter Name (Print)</th>
+            <th style="width: 70px;">Radio #</th>
+            <th style="width: 130px;">Role in Drill</th>
+            <th style="width: 70px; text-align: center;">Eval*</th>
+            <th style="width: 160px;">Member Signature</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: var(--slate-medium);">1</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="text-align: center; color: var(--slate-medium); font-size: 8pt;">C / P / I</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: var(--slate-medium);">2</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="text-align: center; color: var(--slate-medium); font-size: 8pt;">C / P / I</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: var(--slate-medium);">3</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="text-align: center; color: var(--slate-medium); font-size: 8pt;">C / P / I</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: var(--slate-medium);">4</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="text-align: center; color: var(--slate-medium); font-size: 8pt;">C / P / I</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: var(--slate-medium);">5</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="text-align: center; color: var(--slate-medium); font-size: 8pt;">C / P / I</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: var(--slate-medium);">6</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="text-align: center; color: var(--slate-medium); font-size: 8pt;">C / P / I</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: var(--slate-medium);">7</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="text-align: center; color: var(--slate-medium); font-size: 8pt;">C / P / I</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: var(--slate-medium);">8</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="text-align: center; color: var(--slate-medium); font-size: 8pt;">C / P / I</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: var(--slate-medium);">9</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="text-align: center; color: var(--slate-medium); font-size: 8pt;">C / P / I</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: var(--slate-medium);">10</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="text-align: center; color: var(--slate-medium); font-size: 8pt;">C / P / I</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: var(--slate-medium);">11</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="text-align: center; color: var(--slate-medium); font-size: 8pt;">C / P / I</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: var(--slate-medium);">12</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="text-align: center; color: var(--slate-medium); font-size: 8pt;">C / P / I</td>
+            <td>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-size: 7.5pt; color: var(--slate-medium); margin-bottom: 10px;">
+        *Eval Codes: <strong>C</strong> = Competent / Completed; <strong>P</strong> = Needs Practice; <strong>I</strong> = Introduced (Recruit)
+      </div>
+
+      <div style="border: 1px solid var(--slate-border); border-radius: 4px; padding: 8px 10px; background: #fafafa; margin-bottom: 10px;">
+        <div style="font-weight: 800; font-size: 8.5pt; text-transform: uppercase; color: var(--primary-navy); margin-bottom: 4px;">Tailgate Debrief & Action Items:</div>
+        <div style="border-bottom: 1px dotted var(--slate-medium); height: 18px;"></div>
+        <div style="border-bottom: 1px dotted var(--slate-medium); height: 18px;"></div>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid var(--slate-border); padding-top: 8px; font-size: 8.5pt;">
+      <div>
+        <strong>Drill Leader Signature:</strong> ___________________________________
+      </div>
+      <div>
+        <strong>Date Logged:</strong> __________________
+      </div>
+      <div style="font-size: 7.5pt; color: var(--slate-medium);">
+        Rural VFD Weekly Training Records • Retain for 5 Years
+      </div>
+    </div>
+  </div>
+</body>
+</html>
